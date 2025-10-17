@@ -8,6 +8,9 @@ int main(void)  // 프로그램이 시작되는 함수 (main 함수)
     res = (a > b) ? a : b;  // a와 b 중에 큰 값이 res에 저장
     printf("큰 값 : %d\n", res);
 
+    res = (a > b) ? a - b : b - a;  // a와 b 중에 큰 값에서 작은 값을 뺀 값을 res에 저장
+    printf("뺀값 : %d\n", res);
+    
     return 0;
 }
 /*
