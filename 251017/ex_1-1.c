@@ -8,8 +8,8 @@ int main(void)  // 프로그램이 시작되는 함수 (main 함수)
     double R = 0.1;
 
     // 배터리 정보
-    int V = 8;
-    int C = 80;
+    int V = 24;
+    int C = 60;
     float eta = 0.95;
 
     float E_usable = V * C * eta * (1 - R);   // 사용가능 에너지 (Wh)
@@ -20,16 +20,16 @@ int main(void)  // 프로그램이 시작되는 함수 (main 함수)
     printf("------------사전 선정 정보-------------\n");
     printf("평균전류 I_load [A] (부하측): %d\n", I_load);
     printf("평균속도 vel [km/h]: %.1lf\n", vel);
-    printf("예비율 R [20\% = 0.2]: %.1lf\n", R);
+    printf("예비율 R [20%% = 0.2]: %.1lf\n", R);
     printf("\n");
     printf("--------------배터리 정보-------------\n");
     printf("공칭전압 V [V]: %d\n", V);
     printf("용량 C [Ah]: %d\n", C);
-    printf("시스템 효율 eta [90\% = 0.9]: %.2lf\n", eta);
+    printf("시스템 효율 eta [90%% = 0.9]: %.2lf\n", eta);
     printf("\n");
     printf("[결과]\n");
     printf("사용 가능 에너지 E_usable : %.2lf Wh\n",E_usable);
-    printf("런타임 t\t\t\t\t: %.2lf (%.1lf min)\n", t, 60 * t);
+    printf("런타임 t\t\t\t\t: %.2lf h (%.1lf min)\n", t, 60 * t);
     printf("주행거리 d\t\t\t\t: %.2lf km\n",d);
     return 0;
 }
