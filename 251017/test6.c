@@ -2,13 +2,14 @@
 
 int main(void)  // 프로그램이 시작되는 함수 (main 함수)
 {
-    char grade;         //
-    char name[20];       //
+    // 데이터 입력 - 문자열
+    char grade;         // 학점을 입력할 변수
+    char name[20];       // 이름을 입력할 배열
 
     printf("학점 입력 : ");
-    scanf("%c", &grade);
+    scanf("%c", &grade);    // grade 변수에 학점 문자 입력
     printf("이름 입력 : ");
-    scanf("%s", name);
+    scanf("%s", name);      // name 배열에 이름 문자열 입력, &를 사용하지 않는다.
     printf("%s의 학점은 %c입니다.\n", name, grade);
 }
 /*
