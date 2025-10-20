@@ -10,7 +10,9 @@
                 "${file}",
                 "-o",
                 "${fileDirname}/${fileBasenameNoExtension}",
-                "-lm"
+                "-lm",
+                "-lmpfr",
+                "-lgmp"
             ],
             "options": {
                 "cwd": "${fileDirname}"
