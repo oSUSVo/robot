@@ -1,0 +1,1 @@
+min_value3 = max_value;
