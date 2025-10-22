@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <math.h>
 #include <string.h>
 #include <time.h> // time을 사용하기 위한 헤더파일
@@ -7,27 +8,27 @@ double main(void) {
     double dist[360];
     double min_num[3];
     int i, j, k, min_index, min_index2, min_index3;
-    double min_value, min_value2, min_value3, max_value;
+    double min_value, min_value2, min_value3, max_value = 0;
+    printf("%lf", max_value);
 
-    srand(time(NULL)); // 난수 초기화
-	for (int i = 0; i< 360; i++) // 10회 반복	
-    {		
-        int random = rand() % 100; // 0 ~ 100 사이의 숫자를 뽑아서 random 변수에 저장
-        dist[i] = random + 1;
-        printf("%d 번째 : %d\n", i, dist[i]);
-    }
-    // printf("\n360 라이다 거리값 입력 \n");
-    // for (i = 0; i < 10; i++) {
-    //     printf("%3d 거리(cm) : ", i);
-    //     scanf("%lf", &dist[i]);
+    // srand((unsigned int) time(NULL)); // 난수 초기화
+	// for (int i = 0; i< 360; i++) // 10회 반복	
+    // {		
+    //     dist[i] = rand() % 100 + 1; // 1 ~ 100 사이의 숫자를 뽑아서 random 변수에 저장
+    //     printf("%d 번째 : %d\n", i, dist[i]);
     // }
-    // // printf("%lf ", dist[1]); // 출력
+    printf("\n360 라이다 거리값 입력 \n");
+    for (i = 0; i < 10; i++) {
+        printf("%3d 거리(cm) : ", i);
+        scanf("%lf", &dist[i]);
+    }
+    // printf("%lf ", dist[1]); // 출력
 
     for (i = 0; i < 10; i++) {
-            if (max_value < dist[i]) {
-                max_value = dist[i];
-            }
+        if (max_value < dist[i]) {
+            max_value = dist[i];
         }
+    }
 
     min_value = max_value;
     min_value2 = max_value;
