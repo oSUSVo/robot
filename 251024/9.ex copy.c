@@ -13,18 +13,18 @@ int main(void) {
 
     int N = 5;
     double ary[N];
-    double *p = ary;
+
     printf("실수값 %d개 입력 : ", N);
     for (int i = 0; i < N; i++)
     {
-        scanf("%lf", &p+i);
+        scanf("%lf", &ary[i]);
     }
-    for (int i = 0; i < N; i++) {
-        line_up(p, N);
-    }
+    
+    line_up(ary, N);
+    
     printf("정렬된 값 출력 : ");
     for (int i = 0; i < N; i++) {
-        printf("%.lf, ", p);
+        printf("%.lf, ", ary[i]);
     }
     printf("\n");
 
@@ -38,7 +38,13 @@ void swap(double *pa, double *pb) {
 }   
 
 void line_up(double *p, int N) {
-    for (int i=0;i<N-1;i++) {
-        swap(&p, &p+1);
+    for (int i=0;i<N;i++) {
+        for (int j=0;j<N;j++) {
+            //printf("before - %lf\n", p[i]);
+            if (p[j] < p[j+1]) {
+                swap(p+j, p+j+1);
+            }
+            //printf("after - %lf\n", p[i]);
+        }
     }
 }
