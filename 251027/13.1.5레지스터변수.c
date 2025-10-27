@@ -1,10 +1,10 @@
 #include <stdio.h>
 
 int main(void) {
-    int i;                 // 레지스터 변수
+    register int i;                 // 레지스터 변수
     auto int sum = 0;               // auto 지역 변수
 
-    for (i = 0; i < 1000000000; i++)     // 반복과정에서 i를 계속 사용함
+    for (i = 0; i < 10000; i++)     // 반복과정에서 i를 계속 사용함
     {
         sum += i;                   // i 값을 반복하여 누적
     }
