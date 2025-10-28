@@ -16,7 +16,8 @@ int main(void) {
         {0, 0, 0, 0, 0, 0}
     };
     */
-    int *pray = &ary[0][0];
+    int *pray;
+    pray = &ary[0][0];
     int i, j;
 
     // 행렬 정렬
@@ -30,24 +31,29 @@ int main(void) {
 
     // 행합산
     for (i = 0; i < 5; i++) {
-        for (j = 0; j < 5; j++) *(pray + i * 5 + 4) += ary[i][j];
+        for (j = 0; j < 6; j++) {
+            //ary[i][5] += ary[i][j];
+            if (j == 5) {*(pray + i * 6 + 5) = *(pray + i * 6 + j);}
+            else *(pray + i * 6 + 5) += *(pray + i * 6 + j);
+        }
     }
 
     // 열합산
-    for (i = 0; i < 4; i++) {
-        for (j = 0; j < 6; j++) *(pray + 5 * 5 + j) += ary[i][j];
+    for (i = 0; i < 5; i++) {
+        for (j = 0; j < 6; j++) {
+            //ary[4][j] += ary[i][j];
+            if (i == 4) {*(pray + 4 * 6 + j) = *(pray + 4 * 6 + j);}
+            else *(pray + 4 * 6 + j) += *(pray + i * 6 + j);
+        }
     }
 
     // 전체 값 출력
     printf("출력\n");
-    for (i = 0; i < 5; i++) {
-        for (j = 0; j < 6; j++) 
-        {
-            printf("%5d", *(pray + 5 * 5 + j));
-        }
-        printf("\n");
+    for (i=0;i < 30; i++) {
+        if (i % 6 == 5) printf("%5d\n", *(pray + i));
+        else printf("%5d", *(pray + i));
     }
-    printf("\n");
+    
     return 0;
 }
 /*
