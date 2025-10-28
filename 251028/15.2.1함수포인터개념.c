@@ -12,7 +12,7 @@ int main(void) {
     return 0;
 }
 
-int sum(int a, int b) {
+int sum(int a, int b) { // 함수명도 주소다
 
     return a + b;
 }
